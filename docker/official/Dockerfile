@@ -6,6 +6,8 @@ USER root
 # Add the docker binary so running Docker commands from the master works nicely
 RUN apk -U add docker
 
-RUN install-plugins.sh antisamy-markup-formatter matrix-auth pipeline-model-definition blueocean:$BLUEOCEAN_VERSION
+COPY target/plugins /usr/share/jenkins/ref/plugins/
+
+RUN for f in /usr/share/jenkins/ref/plugins/*.hpi; do mv "$f" "${f%%hpi}jpi"; done
 
 USER jenkins

@@ -11,11 +11,24 @@
     <url>https://wiki.jenkins-ci.org/display/JENKINS/Blue+Ocean+Plugin</url>
 
     <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>blueocean</artifactId>
-            <version>${blueocean.version}</version>
-        </dependency>
+      <dependency>
+          <groupId>${project.groupId}</groupId>
+          <artifactId>blueocean</artifactId>
+          <version>${blueocean.version}</version>
+      </dependency>
+      <!--
+        Plugins we want to have in the official image
+      -->
+      <dependency>
+          <groupId>org.jenkins-ci.plugins</groupId>
+          <artifactId>antisamy-markup-formatter</artifactId>
+          <version>1.5</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jenkins-ci.plugins</groupId>
+          <artifactId>matrix-auth</artifactId>
+          <version>1.6</version>
+      </dependency>
     </dependencies>
 
     <repositories>
